@@ -3,8 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const { companiesRouter} = require('./endpoints/companies');
-const { companiesAssignmentRouter} = require('./endpoints/companiesAssignment');
+const { companiesRouter } = require('./endpoints/companies');
+const { companiesAssignmentRouter } = require('./endpoints/companiesAssignment');
 
 const app = express();
 
