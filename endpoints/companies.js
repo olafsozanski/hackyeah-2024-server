@@ -8,10 +8,10 @@ companiesRouter.get('/', async (req, res) => {
 });
 
 companiesRouter.post('/', async (req, res) => {
-    const { nip, name, address } = req.body;
+    const { nip, name, startDate, verificationDate, address } = req.body;
 
     const company = await Company.create({
-        nip, name, address
+        nip, name, startDate, verificationDate, address
     });
 
     res.json(company)

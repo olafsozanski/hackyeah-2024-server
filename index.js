@@ -8,6 +8,7 @@ const { companiesAssignmentRouter } = require('./endpoints/companiesAssignment')
 const { reviewsRouter } = require('./endpoints/reviews');
 const { invoicesRouter } = require('./endpoints/invoices');
 const { transactionsRouter } = require('./endpoints/bankTransactions');
+const { analysisRouter } = require('./endpoints/analysis');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use('/companiesAssignments', companiesAssignmentRouter);
 app.use('/reviews', reviewsRouter);
 app.use('/invoices', invoicesRouter);
 app.use('/transactions', transactionsRouter);
+app.use(analysisRouter);
 
 const start = async () => {
     console.log('Connecting to database...');
