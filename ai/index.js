@@ -28,7 +28,6 @@ const analyzeReviews = async (reviews) => {
     });
 
     return JSON.parse(response.choices[0].message.content);
-    return {};
 };
 
 module.exports = { analyzeReviews };
