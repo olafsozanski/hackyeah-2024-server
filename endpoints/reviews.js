@@ -4,7 +4,7 @@ const reviewsRouter = express.Router();
 
 reviewsRouter.get('/', async (req, res) => {
     const review = await Review.find({});
-    res.render('reviews/index', { company });
+    res.json(review);
 });
 
 reviewsRouter.post('/', async (req, res) => {
@@ -14,7 +14,7 @@ reviewsRouter.post('/', async (req, res) => {
         companyId, content, createdAt
     });
 
-    res.redirect('/reviews/' + review._id);
+    res.json(review)
 });
 
 module.exports = { reviewsRouter };

@@ -4,7 +4,7 @@ const companiesRouter = express.Router();
 
 companiesRouter.get('/', async (req, res) => {
     const company = await Company.find({});
-    res.render('companies/index', { company });
+    res.json(company)
 });
 
 companiesRouter.post('/', async (req, res) => {
@@ -14,7 +14,7 @@ companiesRouter.post('/', async (req, res) => {
         nip, name, address
     });
 
-    res.redirect('/companies/' + company._id);
+    res.json(company)
 });
 
 module.exports = { companiesRouter };
