@@ -4,7 +4,7 @@ const companiesAssignmentRouter = express.Router();
 
 companiesAssignmentRouter.get('/', async (req, res) => {
     const companiesAssignment = await Company.find({});
-    res.render('companiesAssignment/index', { companiesAssignment });
+    res.json(companiesAssignment)
 });
 
 companiesAssignmentRouter.post('/', async (req, res) => {
@@ -14,7 +14,7 @@ companiesAssignmentRouter.post('/', async (req, res) => {
         company1Id, company2Id, lastInteractionDate
     });
 
-    res.redirect('/companiesAssignment/' + companiesAssignment._id);
+    res.json(companiesAssignment)
 });
 
 module.exports = { companiesAssignmentRouter };

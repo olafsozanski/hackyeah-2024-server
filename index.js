@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const { companiesRouter } = require('./endpoints/companies');
 const { companiesAssignmentRouter } = require('./endpoints/companiesAssignment');
 const { reviewsRouter } = require('./endpoints/reviews');
+const { invoicesRouter } = require('./endpoints/invoices');
+const { transactionsRouter } = require('./endpoints/bankTransactions');
 
 const app = express();
 
@@ -20,6 +22,8 @@ app.use((req, res, next) => {
 app.use('/companies', companiesRouter);
 app.use('/companiesAssignments', companiesAssignmentRouter);
 app.use('/reviews', reviewsRouter);
+app.use('/invoices', invoicesRouter);
+app.use('/transactions', transactionsRouter);
 
 const start = async () => {
     console.log('Connecting to database...');
