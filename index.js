@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/companies', companiesRouter);
-app.use('/companiesAssignment', companiesAssignmentRouter);
+app.use('/companiesAssignments', companiesAssignmentRouter);
 
 const start = async () => {
     console.log('Connecting to database...');
