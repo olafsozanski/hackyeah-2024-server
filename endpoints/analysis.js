@@ -14,10 +14,10 @@ analysisRouter.post('/companies/by-nip/:nip/analyze', async (req, res) => {
 
     const contents = reviews.map(review => review.content);
 
-    return {
+    res.json({
         analysis: await analyzeReviews(contents),
         company,
-    };
+    });
 });
 
 module.exports = { analysisRouter };
