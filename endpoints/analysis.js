@@ -9,7 +9,7 @@ const analysisRouter = express.Router();
 
 analysisRouter.post('/companies/by-nip/:nip/analyze', async (req, res) => {
 
-    return {
+    res.json({
         "analysis": {
             "generalRate": 60,
             "profitabilityRate": 65,
@@ -36,7 +36,8 @@ analysisRouter.post('/companies/by-nip/:nip/analyze', async (req, res) => {
             "startDate": "2023-06-18T00:00:00.000Z",
             "__v": 0
         }
-    };
+    });
+    return;
     const { nip } = req.params;
     const company = await Company.findOne({ nip });
     const reviews = await Review.find({ companyId: company.id });
