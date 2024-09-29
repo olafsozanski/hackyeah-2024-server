@@ -32,7 +32,7 @@ const start = async () => {
     await mongoose.connect(process.env.MONGO_URL);
     console.log('Connected to database!');
 
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT, '0.0.0.0', () => {
         console.log(`App listening on port ${process.env.PORT}.`);
     });
 };
