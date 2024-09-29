@@ -1,16 +1,16 @@
 const express = require('express');
-const { Company } = require('../models/companyAssignment');
+const { Company, CompanyAssignment} = require('../models/companyAssignment');
 const companiesAssignmentRouter = express.Router();
 
 companiesAssignmentRouter.get('/', async (req, res) => {
-    const companiesAssignment = await Company.find({});
+    const companiesAssignment = await CompanyAssignment.find({});
     res.json(companiesAssignment)
 });
 
 companiesAssignmentRouter.post('/', async (req, res) => {
     const { company1Id, company2Id, lastInteractionDate } = req.body;
 
-    const companiesAssignment = await Company.create({
+    const companiesAssignment = await CompanyAssignment.create({
         company1Id, company2Id, lastInteractionDate
     });
 
